@@ -66,7 +66,7 @@ header {
 }
 
 .header-container {
-  column-gap: 480px;
+  column-gap: 300px;
   align-items: center;
   height: 50px;
 }
@@ -75,6 +75,7 @@ header {
   align-items: center;
   width: 195px;
   height: 50px;
+  margin-right: 105px;
 }
 
 .logo-icon {
@@ -95,12 +96,10 @@ header {
   color: var(--white-text);
 }
 
-ul {
-  display: flex;
-  justify-content: center;
+.ul-menu {
   align-items: space-between;
   max-width: 720px;
-  padding: 0 auto;
+  column-gap: 71px;
 }
 
 li {
@@ -111,8 +110,6 @@ li {
   line-height: 50px;
   letter-spacing: 2px;
   color: var(--white-text);
-  padding-left: 38px;
-  padding-right: 38px;
 }
 
 .section-welcome {
@@ -444,20 +441,50 @@ input {
   height: 300px;
 }
 
-.social {
-  padding: 0 12px;
+.footer-container {
+  display: flex;
 }
 
-.social-container {
-  max-width: 360px;
-  height: 48px;
+.menu-footer {
+  margin-right: 400px;
+}
+
+.ul-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  max-width: 366px;
+  height: 150px;
+  margin-top: 0;
+  margin-right: 62px;
+}
+
+.li-footer {
+  margin-right: 150px;
+}
+
+.ul-social {
+  width: 336px;
+  padding-bottom: 16px;
   align-self: flex-end;
 }
 
+.social {
+  display: flex;
+  align-content: center;
+}
+
 .circle {
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   border: 1px var(--white-text) solid;
   text-align: center;
-  border-radius: 50px;
+  border-radius: 50%;
+}
+
+.social-icon:hover {
+  filter: invert(50%) sepia(100%) saturate(100%) hue-rotate(10deg)
+    brightness(100%) contrast(100%);
 }
