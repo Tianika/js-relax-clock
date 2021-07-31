@@ -444,5 +444,20 @@ input {
   height: 300px;
 }
 
-.ul-social {
+.social {
+  padding: 0 12px;
+}
+
+.social-container {
+  max-width: 360px;
+  height: 48px;
+  align-self: flex-end;
+}
+
+.circle {
+  width: 48px;
+  height: 48px;
+  border: 1px var(--white-text) solid;
+  text-align: center;
+  border-radius: 50px;
 }
