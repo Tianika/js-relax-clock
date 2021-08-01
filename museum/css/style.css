@@ -18,10 +18,12 @@ html {
 a {
   text-decoration: none;
   color: var(--white);
+  transition: 0.5s ease;
 }
 
 a:hover {
   color: var(--gold);
+  transition: 0.5s ease;
 }
 
 a:visited {
@@ -29,12 +31,11 @@ a:visited {
 }
 
 .logo-icon:hover {
-  filter: invert(50%) sepia(100%) saturate(100%) hue-rotate(10deg)
-    brightness(120%) contrast(100%);
+  filter: invert(58%) sepia(18%) saturate(640%) hue-rotate(356deg)
+    brightness(90%) contrast(89%);
 }
 
 .section {
-  max-width: 1920px;
   margin: 0 auto;
   box-sizing: border-box;
   padding-top: 75px;
@@ -56,6 +57,12 @@ a:visited {
 .flex-container {
   display: flex;
   justify-content: space-between;
+}
+
+header {
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-top: 75px;
 }
 
 .header-container {
@@ -103,11 +110,15 @@ li {
 
 .section-welcome {
   max-width: 1920px;
+  margin: 0 auto;
   height: 750px;
   background-image: url('../assets/img/background-welcome.jpg');
   background-repeat: no-repeat;
   background-position: right 0px bottom 0px;
-  padding-top: 115px;
+}
+
+.welcome {
+  padding-bottom: 0;
 }
 
 h1 {
@@ -140,6 +151,7 @@ p {
 
 .container-welcome {
   height: 390px;
+  padding-top: 113px;
 }
 
 .welcome-text {
@@ -151,8 +163,8 @@ p {
   line-height: 33px;
   letter-spacing: 2px;
   color: var(--white);
-  margin-top: 25px;
-  margin-bottom: 75px;
+  margin-top: 26px;
+  margin-bottom: 77px;
 }
 
 .welcome-button {
@@ -286,14 +298,34 @@ p {
   color: var(--gold);
 }
 
-.video-player {
-  display: block;
-  max-width: 1440px;
-  max-height: 629px;
+.player-container {
+  width: 1440px;
+  height: 629px;
   margin-top: 15px;
+  background-image: url(../assets/video/poster.jpg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.play {
+  width: 200px;
+  height: 200px;
+  background-image: url(../assets/svg/play.svg);
+  background-repeat: no-repeat;
+  border: 10px var(--white) solid;
+  border-radius: 50%;
+  background-position: 67px center;
+  transition: 0.2s ease;
+}
+
+.play:hover {
+  opacity: 0.75;
+  transition: 0.4s ease;
 }
 
 .video-control-panel {
+  background-color: var(--black);
   width: 1440px;
   height: 85px;
 }
@@ -448,7 +480,6 @@ form {
 }
 
 .footer {
-  max-width: 1920px;
   height: 300px;
 }
 
@@ -496,8 +527,8 @@ form {
 }
 
 .social-icon:hover {
-  filter: invert(50%) sepia(100%) saturate(100%) hue-rotate(10deg)
-    brightness(100%) contrast(100%);
+  filter: invert(57%) sepia(28%) saturate(397%) hue-rotate(356deg)
+    brightness(89%) contrast(92%);
 }
 
 /*

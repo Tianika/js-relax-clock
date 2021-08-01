@@ -16,7 +16,7 @@
     <link rel="shortcut icon" href="./assets/favicon.ico" type="favicon.ico" />
   </head>
   <body>
-    <header class="section dark-section">
+    <header class="dark-section" id="welcome">
       <div class="container flex-container header-container">
         <div class="logo flex-container">
           <a class="logo-icon" href="./index.html"> </a>
@@ -36,16 +36,18 @@
       </div>
     </header>
     <main class="main">
-      <section class="section dark-section section-welcome">
-        <div class="container container-welcome">
-          <h2 class="h2-white">Welcome <br />to the louvre</h2>
-          <h4 class="welcome-text">From the castle to the museum</h4>
-          <a
-            href="https://www.google.com/maps/@48.8618159,2.3366818,3a,90y,82.21h,70.85t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736"
-            class="welcome-button"
-          >
-            <div class="welcome-button-text">Discover the Louvre</div>
-          </a>
+      <section class="section dark-section welcome">
+        <div class="section-welcome">
+          <div class="container container-welcome">
+            <h2 class="h2-white">Welcome <br />to the louvre</h2>
+            <h4 class="welcome-text">From the castle to the museum</h4>
+            <a
+              href="https://www.google.com/maps/@48.8618159,2.3366818,3a,90y,82.21h,70.85t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736"
+              class="welcome-button"
+            >
+              <div class="welcome-button-text">Discover the Louvre</div>
+            </a>
+          </div>
         </div>
       </section>
       <section class="section" id="visiting">
@@ -186,16 +188,10 @@
       </section>
       <section class="section" id="video">
         <div class="container">
-          <img
-            class="video-player"
-            src="./assets/img/video-player.jpg"
-            alt="Video player"
-          />
-          <img
-            class="video-control-panel"
-            src="./assets/img/video-control-panel.jpg"
-            alt="Video control panel"
-          />
+          <div class="player-container">
+            <div class="play"></div>
+          </div>
+          <div class="video-control-panel"></div>
           <div class="video-content flex-container">
             <h2 class="h2-gold">Video journey</h2>
             <p class="video-content-text">
