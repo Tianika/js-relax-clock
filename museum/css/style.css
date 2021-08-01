@@ -110,6 +110,7 @@ li {
 
 .section-welcome {
   max-width: 1920px;
+  padding-top: 1px;
   margin: 0 auto;
   height: 750px;
   background-image: url('../assets/img/background-welcome.jpg');
@@ -118,6 +119,7 @@ li {
 }
 
 .welcome {
+  margin-top: -1px;
   padding-bottom: 0;
 }
 
@@ -151,7 +153,7 @@ p {
 
 .container-welcome {
   height: 390px;
-  padding-top: 113px;
+  padding-top: 114px;
 }
 
 .welcome-text {
@@ -326,22 +328,31 @@ p {
 
 .video-control-panel {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
   background-color: var(--black);
   width: 1440px;
   height: 85px;
+  padding-left: 35px;
+  padding-right: 38px;
+}
+
+.volume-panel {
+  align-items: center;
+  width: 212px;
+  margin-right: 8px;
 }
 
 .play-buttons {
   align-items: center;
-  width: 159px;
+  width: 172px;
   height: 30px;
 }
 
 .play-button {
   width: 40px;
-  height: 40px;
+  height: 38px;
   background-repeat: no-repeat;
   background-position: center center;
   transition: 0.2s ease;
@@ -373,8 +384,39 @@ p {
   background-image: url(../assets/svg/fullscreen.svg);
 }
 
+.progress {
+  background: linear-gradient(
+    to right,
+    #24809e 0%,
+    #24809e 47%,
+    #c4c4c4 47%,
+    #c4c4c4 100%
+  );
+  height: 8px;
+  outline: none;
+  transition: background 450ms ease-in;
+  -webkit-appearance: none;
+}
+
+.progress.video {
+  width: 820px;
+}
+
+.progress.vol {
+  width: 155px;
+}
+
+.progress::-webkit-slider-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  cursor: ew-resize;
+  background: var(--white);
+}
+
 .video-content {
-  margin-top: 35px;
+  margin-top: 38px;
 }
 
 .video-content-text {
@@ -387,6 +429,7 @@ p {
   display: flex;
   align-items: center;
   color: var(--black);
+  padding-top: 5px;
 }
 
 .tickets-container {
@@ -418,10 +461,27 @@ form {
 .ticket-radio {
   display: flex;
   margin-top: 50px;
+  padding-top: 4px;
 }
 
-.amount {
-  text-align: end;
+.input {
+  width: 17px;
+  height: 17px;
+  border: white 2px solid;
+  border-radius: 50%;
+  background-color: black;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.tickets-amount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .ticket-choice {
@@ -431,7 +491,7 @@ form {
   font-size: var(--font22);
   line-height: 26px;
   color: var(--white);
-  margin-left: 15px;
+  margin-left: 25px;
 }
 
 .tickets-choice-age {
@@ -443,6 +503,7 @@ form {
   color: var(--white);
   margin-top: 12px;
   margin-bottom: 13px;
+  align-self: start;
 }
 
 .button-border {
@@ -451,14 +512,32 @@ form {
   border: 3px solid var(--white);
   box-sizing: border-box;
   border-radius: 0px;
-  margin-bottom: 36px;
+  margin-bottom: 24px;
+}
+
+.button {
+  background-color: var(--black);
+  color: var(--white);
+  width: 1em;
+  text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 37px;
+  cursor: pointer;
+  border: 0;
+  padding: 3px 8px;
 }
 
 .number {
   all: unset;
   width: 3em;
   text-align: center;
-  font-size: var(--font22);
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
   line-height: 26px;
   color: var(--white);
 }
@@ -471,14 +550,21 @@ form {
   line-height: 33px;
   letter-spacing: 1.65px;
   color: var(--white);
-  margin-top: 50px;
+  margin-top: 28px;
+  margin-bottom: 48px;
 }
 .button-buy {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 175px;
   height: 50px;
   background-color: var(--white);
   border-radius: 2px;
+}
+
+.button-buy:hover {
+  background-color: var(--gold);
 }
 
 .button-buy-text {
@@ -487,10 +573,8 @@ form {
   font-weight: 300;
   font-size: var(--font22);
   line-height: 26px;
-  text-align: center;
   letter-spacing: 2px;
   color: var(--black);
-  margin-top: 50px;
 }
 
 .contacts {
@@ -528,10 +612,8 @@ form {
 
 .footer-container {
   display: flex;
-}
-
-.menu-footer {
-  margin-right: 400px;
+  justify-content: space-between;
+  width: 790px;
 }
 
 .ul-footer {
@@ -539,15 +621,11 @@ form {
   justify-content: space-between;
   flex-direction: column;
   flex-wrap: wrap;
-  max-width: 366px;
+  width: 450px;
   height: 150px;
+  column-gap: 66px;
   margin-top: 0;
-  margin-right: 62px;
-  padding-left: 145px;
-}
-
-.li-footer {
-  margin-right: 150px;
+  padding-left: 0;
 }
 
 .ul-social {
@@ -573,12 +651,3 @@ form {
   filter: invert(57%) sepia(28%) saturate(397%) hue-rotate(356deg)
     brightness(89%) contrast(92%);
 }
-
-/*
-input {
-  input::-webkit-inner-spin-button,
-  input::-webkit-outer-spin-button {
-    appearance: none;
-  }
-}
-*/

@@ -197,9 +197,26 @@
               <div class="play-button play"></div>
               <div class="play-button forward"></div>
             </div>
-            <input type="range" name="" id="" />
-            <div class="play-button volume"></div>
-            <input type="range" name="" id="" />
+            <input
+              type="range"
+              value="47"
+              min="0"
+              max="100"
+              step="1"
+              class="progress video"
+            />
+            <div class="volume-panel flex-container">
+              <div class="play-button volume"></div>
+              <input
+                type="range"
+                value="41"
+                min="0"
+                max="100"
+                step="1"
+                class="progress vol"
+              />
+            </div>
+
             <div class="play-button fullscreen"></div>
           </div>
           <div class="video-content flex-container">
@@ -226,6 +243,7 @@
                 <form>
                   <div class="ticket-radio">
                     <input
+                      class="input"
                       type="radio"
                       name="tickets"
                       id="permanent"
@@ -236,13 +254,23 @@
                     >
                   </div>
                   <div class="ticket-radio">
-                    <input type="radio" name="tickets" id="temporary" />
+                    <input
+                      class="input"
+                      type="radio"
+                      name="tickets"
+                      id="temporary"
+                    />
                     <label class="ticket-choice" for="temporary"
                       >Temporary exhibition</label
                     >
                   </div>
                   <div class="ticket-radio">
-                    <input type="radio" name="tickets" id="combined" />
+                    <input
+                      class="input"
+                      type="radio"
+                      name="tickets"
+                      id="combined"
+                    />
                     <label class="ticket-choice" for="combined"
                       >Combined Admission</label
                     >
@@ -251,51 +279,59 @@
               </div>
               <div class="tickets-amount">
                 <h3 class="tickets-subtitle amount">Amount</h3>
-                <div class="tickets-choice-age">Basic 18+</div>
-                <div class="button-border">
-                  <button
-                    type="button"
-                    onclick="this.nextElementSibling.stepDown()"
-                  >
-                    -
-                  </button>
-                  <input
-                    type="number"
-                    min="0"
-                    max="20"
-                    value="1"
-                    readonly
-                    class="number"
-                  />
-                  <button
-                    type="button"
-                    onclick="this.previousElementSibling.stepUp()"
-                  >
-                    +
-                  </button>
+                <div class="ticket-block">
+                  <div class="tickets-choice-age">Basic 18+</div>
+                  <div class="button-border">
+                    <button
+                      class="button"
+                      type="button"
+                      onclick="this.nextElementSibling.stepDown()"
+                    >
+                      &minus;
+                    </button>
+                    <input
+                      type="number"
+                      min="0"
+                      max="9"
+                      value="1"
+                      readonly
+                      class="number"
+                    />
+                    <button
+                      type="button"
+                      class="button"
+                      onclick="this.previousElementSibling.stepUp()"
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
-                <div class="tickets-choice-age">Senior 65+</div>
-                <div class="button-border">
-                  <button
-                    type="button"
-                    onclick="this.nextElementSibling.stepDown()"
-                  >
-                    -
-                  </button>
-                  <input
-                    type="number"
-                    min="0"
-                    max="20"
-                    value="1"
-                    readonly
-                    class="number"
-                  />
-                  <button
-                    type="button"
-                    onclick="this.previousElementSibling.stepUp()"
-                  >
-                    +
-                  </button>
+                <div class="ticket-block">
+                  <div class="tickets-choice-age">Senior 65+</div>
+                  <div class="button-border">
+                    <button
+                      class="button"
+                      type="button"
+                      onclick="this.nextElementSibling.stepDown()"
+                    >
+                      &minus;
+                    </button>
+                    <input
+                      type="number"
+                      min="0"
+                      max="9"
+                      value="1"
+                      readonly
+                      class="number"
+                    />
+                    <button
+                      class="button"
+                      type="button"
+                      onclick="this.previousElementSibling.stepUp()"
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
                 <div class="amount-total">Total&nbsp€220</div>
                 <a href="#" class="button-buy">
@@ -331,23 +367,25 @@
       </section>
     </main>
     <footer class="footer section dark-section">
-      <div class="container footer-container">
-        <div class="logo flex-container">
-          <a class="logo-icon" href="./index.html"> </a>
-          <h1 class="logo-title">
-            <a href="./index.html">Louvre</a>
-          </h1>
+      <div class="container flex-container">
+        <div class="footer-container">
+          <div class="logo flex-container">
+            <a class="logo-icon" href="./index.html"> </a>
+            <div class="logo-title">
+              <a href="./index.html">Louvre</a>
+            </div>
+          </div>
+          <nav>
+            <ul class="ul-footer">
+              <li><a href="#welcome">Welcome</a></li>
+              <li><a href="#visiting">Visiting</a></li>
+              <li><a href="#explore">Explore</a></li>
+              <li><a href="#video">Video</a></li>
+              <li><a href="#tickets">Tickets</a></li>
+              <li><a href="#contacts">Contacts</a></li>
+            </ul>
+          </nav>
         </div>
-        <nav class="menu-footer">
-          <ul class="ul-footer">
-            <li class="li-footer"><a href="#welcome">Welcome</a></li>
-            <li class="li-footer"><a href="#visiting">Visiting</a></li>
-            <li class="li-footer"><a href="#explore">Explore</a></li>
-            <li class="li-footer"><a href="#video">Video</a></li>
-            <li class="li-footer"><a href="#tickets">Tickets</a></li>
-            <li class="li-footer"><a href="#contacts">Contacts</a></li>
-          </ul>
-        </nav>
         <ul class="ul-social flex-container">
           <li class="social">
             <a href="https://www.youtube.com/user/louvre" class="social-icon">
@@ -396,5 +434,6 @@
         </ul>
       </div>
     </footer>
+    <script src="./index.js"></script>
   </body>
 </html>
