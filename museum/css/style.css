@@ -153,7 +153,7 @@ p {
 
 .container-welcome {
   height: 390px;
-  padding-top: 114px;
+  padding-top: 113px;
 }
 
 .welcome-text {
@@ -429,7 +429,7 @@ p {
   display: flex;
   align-items: center;
   color: var(--black);
-  padding-top: 5px;
+  padding-top: 2px;
 }
 
 .tickets-container {
@@ -464,24 +464,31 @@ form {
   padding-top: 4px;
 }
 
-.input {
-  width: 17px;
-  height: 17px;
-  border: white 2px solid;
-  border-radius: 50%;
-  background-color: black;
+.ticket-radio input[type='radio'] {
+  display: none;
 }
 
-input[type='number']::-webkit-outer-spin-button,
-input[type='number']::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.ticket-radio label {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  line-height: 21px;
+  user-select: none;
 }
 
-.tickets-amount {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+.ticket-radio label:before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  background: url(../assets/svg/radio-2.svg) 0 0 no-repeat;
+}
+
+.ticket-radio input[type='radio']:checked + label:before {
+  background: url(../assets/svg/radio-1.svg) 0 0 no-repeat;
 }
 
 .ticket-choice {
@@ -491,7 +498,13 @@ input[type='number']::-webkit-inner-spin-button {
   font-size: var(--font22);
   line-height: 26px;
   color: var(--white);
-  margin-left: 25px;
+  padding-left: 40px;
+}
+
+.tickets-amount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .tickets-choice-age {
@@ -527,17 +540,17 @@ input[type='number']::-webkit-inner-spin-button {
   line-height: 37px;
   cursor: pointer;
   border: 0;
-  padding: 3px 8px;
+  padding-top: 4px;
 }
 
 .number {
   all: unset;
-  width: 3em;
+  width: 2.85em;
   text-align: center;
   font-family: Roboto;
   font-style: normal;
   font-weight: 300;
-  font-size: 22px;
+  font-size: 24px;
   line-height: 26px;
   color: var(--white);
 }
