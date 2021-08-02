@@ -165,8 +165,8 @@ p {
   line-height: 33px;
   letter-spacing: 2px;
   color: var(--white);
-  margin-top: 26px;
-  margin-bottom: 77px;
+  margin-top: 28px;
+  margin-bottom: 76px;
 }
 
 .welcome-button {
@@ -192,11 +192,15 @@ p {
   color: var(--white);
 }
 
+#visiting {
+  min-height: 1265px;
+}
+
 .container-cards {
   flex-wrap: wrap;
-  gap: 76px 60px;
+  gap: 79px 60px;
   padding: 0;
-  margin-top: 103px;
+  margin-top: 104px;
 }
 
 .card {
@@ -287,13 +291,13 @@ p {
   font-weight: 300;
   font-size: 22px;
   line-height: 38px;
-  margin-bottom: 26px;
+  margin-bottom: 28px;
 }
 
 .explore-image {
   max-width: 720px;
   max-height: 700px;
-  margin-top: 16px;
+  margin-top: 15px;
 }
 
 .yellow-text {
@@ -338,12 +342,6 @@ p {
   padding-right: 38px;
 }
 
-.volume-panel {
-  align-items: center;
-  width: 212px;
-  margin-right: 8px;
-}
-
 .play-buttons {
   align-items: center;
   width: 172px;
@@ -377,6 +375,7 @@ p {
 }
 
 .volume {
+  margin-left: 15px;
   background-image: url(../assets/svg/volume.svg);
 }
 
@@ -400,10 +399,12 @@ p {
 
 .progress.video {
   width: 820px;
+  margin-left: 10px;
 }
 
 .progress.vol {
   width: 155px;
+  margin-right: 20px;
 }
 
 .progress::-webkit-slider-thumb {
@@ -416,7 +417,7 @@ p {
 }
 
 .video-content {
-  margin-top: 38px;
+  margin-top: 41px;
 }
 
 .video-content-text {
@@ -429,11 +430,10 @@ p {
   display: flex;
   align-items: center;
   color: var(--black);
-  padding-top: 2px;
 }
 
 .tickets-container {
-  margin-top: 103px;
+  margin-top: 104px;
 }
 .tickets-choice {
   width: 660px;
@@ -461,7 +461,7 @@ form {
 .ticket-radio {
   display: flex;
   margin-top: 50px;
-  padding-top: 4px;
+  padding-top: 5px;
 }
 
 .ticket-radio input[type='radio'] {
@@ -514,13 +514,13 @@ form {
   font-size: var(--font22);
   line-height: 26px;
   color: var(--white);
-  margin-top: 12px;
+  margin-top: 13px;
   margin-bottom: 13px;
   align-self: start;
 }
 
 .button-border {
-  width: 150px;
+  width: 149px;
   height: 50px;
   border: 3px solid var(--white);
   box-sizing: border-box;
@@ -553,6 +553,12 @@ form {
   font-size: 24px;
   line-height: 26px;
   color: var(--white);
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .amount-total {
@@ -600,8 +606,8 @@ form {
   font-weight: 500;
   font-size: var(--font28);
   line-height: 34px;
-  margin-top: 9px;
-  margin-bottom: 37px;
+  margin-top: 10px;
+  margin-bottom: 39px;
 }
 
 .contacts-content-item {

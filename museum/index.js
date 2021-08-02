@@ -2,5 +2,5 @@ const progress = document.querySelector('.progress')
 
 progress.addEventListener('input', function () {
   const value = this.value
-  this.style.background = `linear-gradient(to right, #82CFD0 0%, #82CFD0 ${value}%, #fff ${value}%, white 100%)`
+  this.style.background = `linear-gradient(to right, #24809e 0%, #24809e ${value}%, #C4C4C4 ${value}%, #C4C4C4 100%)`
 })
