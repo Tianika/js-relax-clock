@@ -32,7 +32,7 @@ a:visited {
 
 .logo-icon:hover {
   filter: invert(58%) sepia(18%) saturate(640%) hue-rotate(356deg)
-    brightness(90%) contrast(89%);
+    brightness(91%) contrast(89%);
 }
 
 .section {
