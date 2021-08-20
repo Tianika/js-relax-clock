@@ -16,7 +16,7 @@
   padding-left: 50px;
   padding-right: 50px;
   color: #ffffff;
-  transition: 0.5s;
+  transition: 1s;
 }
 
 .container {
@@ -31,9 +31,39 @@
   width: 370px;
   height: 370px;
   background-color: #b8b8b8;
-  opacity: 30%;
   border-radius: 50%;
   align-self: center;
+}
+
+.hours,
+.minutes {
+  width: 5px;
+  height: 150px;
+  background-color: #000000;
+}
+
+.hours,
+.minutes,
+.seconds,
+.center {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  rotate: 100deg;
+}
+
+.seconds {
+  width: 5px;
+  height: 150px;
+  background-color: #ff0000;
+}
+
+.center {
+  width: 12px;
+  height: 12px;
+  background-color: #ff0000;
+  border-radius: 50%;
 }
 
 .arrow-left,

@@ -43,7 +43,10 @@ const dateYear = document.querySelector('.digital-date')
 let bgIndex = Math.round(Math.random() * BACKGROUNDS.length)
 changeBackground(bgIndex)
 
-let timerId = setInterval(() => showTime(), 1000)
+let timerId = setTimeout(function show() {
+  showTime()
+  setTimeout(show, 1000)
+}, 1000 - new Date().getMilliseconds())
 
 leftBtn.addEventListener('click', () => change('left'))
 rightBtn.addEventListener('click', () => change('right'))
