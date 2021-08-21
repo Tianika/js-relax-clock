@@ -9,12 +9,13 @@
   </head>
   <body class="body">
     <button class="arrow-left" title="change background"></button>
+    <button class="sound sound-left" title="change sound">Left</button>
     <div class="container">
       <div class="analog-clock">
-        <div class="border">
-          <div class="hours"></div>
-          <div class="minutes"></div>
-          <div class="seconds"></div>
+        <div class="clock-bg">
+          <div class="hand hours"></div>
+          <div class="hand minutes"></div>
+          <div class="hand seconds"></div>
           <div class="center"></div>
         </div>
       </div>
@@ -24,8 +25,15 @@
       </div>
       <div class="quotes">Quotes are here</div>
     </div>
+    <button class="sound sound-right" title="change sound">Right</button>
     <button class="arrow-right" title="change background"></button>
-
+    <audio
+      class="audio"
+      src="/mp3/les-ptitsyi-techet-reka-36679.mp3"
+      type="audio/mpeg"
+      autoplay="true"
+      loop="true"
+    ></audio>
     <script src="script.js"></script>
   </body>
 </html>

@@ -16,7 +16,6 @@
   padding-left: 50px;
   padding-right: 50px;
   color: #ffffff;
-  transition: 1s;
 }
 
 .container {
@@ -27,42 +26,52 @@
   align-items: center;
 }
 
-.border {
+.clock-bg {
+  position: relative;
   width: 370px;
   height: 370px;
-  background-color: #b8b8b8;
+  background-color: rgba(255, 255, 255, 0.144);
   border-radius: 50%;
-  align-self: center;
+}
+
+.hand {
+  position: absolute;
+  left: 50%;
+  height: 50%;
+  width: 5px;
+  transform-origin: 0 100%;
+  transform: rotate(100deg);
+  transition: all 0.3s;
 }
 
 .hours,
 .minutes {
-  width: 5px;
-  height: 150px;
   background-color: #000000;
 }
 
-.hours,
-.minutes,
-.seconds,
-.center {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -100%);
-  rotate: 100deg;
-}
-
 .seconds {
-  width: 5px;
-  height: 150px;
   background-color: #ff0000;
+  width: 3px;
 }
 
 .center {
-  width: 12px;
-  height: 12px;
   background-color: #ff0000;
+}
+
+.hours {
+  width: 6px;
+  height: 29%;
+  top: 20%;
+  transform-origin: 30% 100%;
+  transform: rotate(10deg);
+}
+
+.center {
+  position: absolute;
+  left: 178px;
+  top: 178px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
 }
 
@@ -100,7 +109,6 @@
   align-items: center;
   min-width: 50%;
   min-height: 12%;
-  font-size: 50px;
   font-weight: bold;
   opacity: 80%;
   margin: 30px;
@@ -112,4 +120,11 @@
 
 .digital-date {
   font-size: 70px;
+}
+
+.sound {
+  width: 4%;
+  height: 15%;
+  margin-top: 25px;
+  cursor: pointer;
 }
