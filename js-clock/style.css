@@ -26,7 +26,7 @@
 }
 
 .clock-face {
-  background-image: url(/img/clockface.png);
+  background-image: url(/png/clockface.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -66,7 +66,7 @@
 
 .hours {
   width: 6px;
-  height: 29%;
+  height: 30%;
   top: 20%;
   transform-origin: 30% 100%;
   transform: rotate(10deg);
@@ -96,16 +96,16 @@
 }
 
 .arrow-left {
-  background-image: url(/img/arrow-left.png);
+  background-image: url(/png/arrow-left.png);
 }
 
 .arrow-right {
-  background-image: url(/img/arrow-right.png);
+  background-image: url(/png/arrow-right.png);
 }
 
 .arrow-left:hover,
 .arrow-right:hover {
-  opacity: 40%;
+  opacity: 50%;
 }
 
 .digital-clock {
@@ -129,8 +129,24 @@
   font-size: 70px;
 }
 
+.quotes-block {
+  display: flex;
+  justify-content: space-around;
+}
+
 .quotes {
   font-size: 36px;
+  opacity: 90%;
+}
+
+.quote {
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 40px;
 }
 
 .control-audio {
@@ -141,7 +157,48 @@
 }
 
 .sound {
+  width: 30px;
+  height: 30px;
   cursor: pointer;
+  background: transparent;
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 30%;
+}
+
+.back {
+  background-image: url(/png/left.png);
+}
+
+.forward {
+  background-image: url(/png/right.png);
+}
+
+.play {
+  background-image: url(/png/play.png);
+}
+
+.pause {
+  background-image: url(/png/pause.png);
+}
+
+.volumeUp {
+  background-image: url(/png/volume+.png);
+}
+
+.volumeDown {
+  background-image: url(/png/volume-.png);
+}
+
+.back:hover,
+.forward:hover,
+.play:hover,
+.pause:hover,
+.volumeUp:hover,
+.volumeDown:hover {
+  opacity: 60%;
 }
 
 @media (max-width: 1200px) {

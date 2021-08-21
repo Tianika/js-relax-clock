@@ -54,6 +54,25 @@ const DAYS = [
   'Saturday',
 ]
 
+const QUOTES = [
+  'A dream becomes a goal when action is taken toward its achievement',
+  'In any business the most important thing is to start. Remember: no one has been able to succeed planning!',
+  'Success does not consist in never making mistakes but in never making the same one a second time',
+  'It does not matter how slowly you go so long as you do not stop',
+  'The time for action is now. It’s never too late to do something.',
+  'You miss 100% of the shots you don’t take',
+  'Do not squander time – this is stuff life is made of',
+  'Your life is not a problem to be solved but a gift to be opened',
+  'Life is short. There is no time to leave important words unsaid',
+  'We do not remember days, we remember moments',
+  'Failure does not mean. I have disgraced. It does mean I have dared to try',
+  'If you fall asleep now, you will dream. If you study now, you will live your dream',
+  'A pessimist sees the difficulty in every opportunity. An optimist sees the opportunity in every difficulty',
+  'Don’t let yesterday take up too much of today',
+  'You don’t always need a plan. Sometimes you just need to breathe, trust, let go, and see what happens',
+  'All our dreams can come true, if we have the courage to pursue them',
+]
+
 const leftBtn = document.querySelector('.arrow-left')
 const rightBtn = document.querySelector('.arrow-right')
 const timeStr = document.querySelector('.digital-time')
@@ -62,29 +81,51 @@ const hourHands = document.querySelector('.hours')
 const minutesHands = document.querySelector('.minutes')
 const secondHands = document.querySelector('.seconds')
 const audio = document.querySelector('.audio')
-const leftSound = document.querySelector('.sound-left')
-const rightSound = document.querySelector('.sound-right')
+const leftSound = document.querySelector('.back')
+const rightSound = document.querySelector('.forward')
+const play = document.querySelector('.play')
+const pause = document.querySelector('.pause')
+const volumeUp = document.querySelector('.volumeUp')
+const volumeDown = document.querySelector('.volumeDown')
+const quote = document.querySelector('.quotes')
+const previous = document.querySelector('.previous')
+const next = document.querySelector('.next')
 
 let bgIndex = Math.round(Math.random() * BACKGROUNDS.length)
+let soundIndex = Math.round(Math.random() * SOUNDS.length)
+let quoteIndex = Math.round(Math.random() * QUOTES.length)
+
+document.body.style.backgroundImage = `url(/img/${BACKGROUNDS[bgIndex]}.jpg)`
+audio.src = `/mp3/${SOUNDS[soundIndex]}.mp3`
+quote.textContent = `${QUOTES[quoteIndex]}`
+setTime()
+
+leftBtn.addEventListener('click', () =>
+  changeBackground('left', BACKGROUNDS, bgIndex)
+)
+rightBtn.addEventListener('click', () =>
+  changeBackground('right', BACKGROUNDS, bgIndex)
+)
+leftSound.addEventListener('click', () =>
+  changeSound('left', SOUNDS, soundIndex)
+)
+rightSound.addEventListener('click', () =>
+  changeSound('right', SOUNDS, soundIndex)
+)
+play.addEventListener('click', () => audio.play())
+pause.addEventListener('click', () => audio.pause())
+volumeDown.addEventListener('click', () => (audio.volume -= 0.1))
+volumeUp.addEventListener('click', () => (audio.volume += 0.1))
+previous.addEventListener('click', () =>
+  changeQuote('left', QUOTES, quoteIndex)
+)
+next.addEventListener('click', () => changeQuote('right', QUOTES, quoteIndex))
 
 let timerId = setTimeout(function show() {
   setTime()
   analogClock()
   setTimeout(show, 1000)
 }, 1000 - new Date().getMilliseconds())
-
-leftBtn.addEventListener('click', () => change('left', BACKGROUNDS))
-rightBtn.addEventListener('click', () => change('right', BACKGROUNDS))
-leftSound.addEventListener('click', () => change('left', SOUNDS))
-rightSound.addEventListener('click', () => change('right', SOUNDS))
-
-changeBackground(bgIndex)
-changeAudio(bgIndex)
-setTime()
-
-function setIndex(arr) {
-  let bgIndex = Math.round(Math.random() * arr.length)
-}
 
 function analogClock() {
   let now = new Date()
@@ -93,7 +134,7 @@ function analogClock() {
   let minutes = now.getMinutes()
   let seconds = now.getSeconds()
 
-  let hourDeg = hours * 30
+  let hourDeg = hours * 30 + minutes / 2
   let minutesDeg = minutes * 6
   let secondsDeg = seconds * 6
 
@@ -101,8 +142,6 @@ function analogClock() {
   minutesHands.style.transform = `rotate(${minutesDeg}deg)`
   secondHands.style.transform = `rotate(${secondsDeg}deg)`
 }
-
-function setTimeClock() {}
 
 function setTime() {
   let now = new Date()
@@ -123,29 +162,35 @@ function showTime(time, date) {
   dateStr.textContent = `${date}`
 }
 
-function change(direction, arr) {
-  if (direction === 'left') {
-    if (bgIndex > 0) {
-      bgIndex--
-    } else {
-      bgIndex = arr.length - 1
-    }
-  }
-  if (direction === 'right') {
-    if (bgIndex < arr.length - 1) {
-      bgIndex++
-    } else {
-      bgIndex = 0
-    }
-  }
-
-  changeBackground(bgIndex)
-}
-
-function changeBackground(bgIndex) {
+function changeBackground(direction, arr, index) {
+  bgIndex = change(direction, arr, index)
   document.body.style.backgroundImage = `url(/img/${BACKGROUNDS[bgIndex]}.jpg)`
 }
 
-function changeAudio(bgIndex) {
-  audio.style.src = `/mp3/${SOUNDS[bgIndex]}.mp3`
+function changeSound(direction, arr, index) {
+  soundIndex = change(direction, arr, index)
+  audio.src = `/mp3/${SOUNDS[soundIndex]}.mp3`
+}
+
+function changeQuote(direction, arr, index) {
+  quoteIndex = change(direction, arr, index)
+  quote.textContent = `${QUOTES[quoteIndex]}`
+}
+
+function change(direction, arr, index) {
+  if (direction === 'left') {
+    if (index > 0) {
+      index--
+    } else {
+      index = arr.length - 1
+    }
+  }
+  if (direction === 'right') {
+    if (index < arr.length - 1) {
+      index++
+    } else {
+      index = 0
+    }
+  }
+  return index
 }
