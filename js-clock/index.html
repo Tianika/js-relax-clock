@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Сlock</title>
+  </head>
+  <body class="body">
+    <button class="arrow-left" title="change background"></button>
+    <div class="container">
+      <div class="clock-face">
+        <div class="hand hours"></div>
+        <div class="hand minutes"></div>
+        <div class="hand seconds"></div>
+        <div class="center"></div>
+      </div>
+      <div class="digital-clock">
+        <div class="digital-time"></div>
+        <div class="digital-date"></div>
+      </div>
+      <div class="quotes-block">
+        <button class="quote previous" title="previous">"</button>
+        <div class="quotes">Quotes are here</div>
+        <button class="quote next" title="next">"</button>
+      </div>
+      <div class="control-audio">
+        <button class="sound back" title="back"></button>
+        <button class="sound forward" title="forward"></button>
+
+        <button class="sound play" title="play"></button>
+        <button class="sound pause" title="pause"></button>
+
+        <button class="sound volumeDown" title="volume -"></button>
+        <button class="sound volumeUp" title="volume +"></button>
+      </div>
+    </div>
+    <button class="arrow-right" title="change background"></button>
+    <audio
+      class="audio"
+      src="/mp3/les-yujnaya-amerika-vecher-nasekomyie-blizko-38554.mp3"
+      type="audio/mpeg"
+      autoplay="true"
+      preload="auto"
+      loop="true"
+    ></audio>
+    <script src="script.js"></script>
+  </body>
+</html>
