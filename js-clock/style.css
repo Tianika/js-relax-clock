@@ -105,3 +105,11 @@
   opacity: 80%;
   margin: 30px;
 }
+
+.digital-time {
+  font-size: 110px;
+}
+
+.digital-date {
+  font-size: 70px;
+}

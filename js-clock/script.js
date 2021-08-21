@@ -37,28 +37,23 @@ const DAYS = [
 
 const leftBtn = document.querySelector('.arrow-left')
 const rightBtn = document.querySelector('.arrow-right')
-const time = document.querySelector('.digital-time')
-const dateYear = document.querySelector('.digital-date')
+const timeStr = document.querySelector('.digital-time')
+const dateStr = document.querySelector('.digital-date')
 
 let bgIndex = Math.round(Math.random() * BACKGROUNDS.length)
-changeBackground(bgIndex)
 
 let timerId = setTimeout(function show() {
-  showTime()
+  getTime()
   setTimeout(show, 1000)
 }, 1000 - new Date().getMilliseconds())
 
 leftBtn.addEventListener('click', () => change('left'))
 rightBtn.addEventListener('click', () => change('right'))
 
-showTime()
+getTime()
+changeBackground(bgIndex)
 
-function showTime() {
-  let now = new Date()
-  let year = now.getFullYear()
-  let month = now.getMonth()
-  let date = now.getDate()
-  let day = now.getDay()
+function analogTime() {
   let hours = now.getHours()
   let minutes = now.getMinutes()
   let seconds = now.getSeconds()
@@ -72,9 +67,25 @@ function showTime() {
   if (seconds < 10) {
     seconds = `0${seconds}`
   }
+}
 
-  time.textContent = `${hours} : ${minutes} : ${seconds}`
-  dateYear.textContent = `${DAYS[day]}, ${date} ${MONTHS[month]} ${year}`
+function getTime() {
+  let now = new Date()
+  let options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }
+  let time = now.toLocaleTimeString()
+  let date = now.toLocaleDateString('en-GB', options)
+
+  showTime(time, date)
+}
+
+function showTime(time, date) {
+  timeStr.textContent = `${time}`
+  dateStr.textContent = `${date}`
 }
 
 function change(direction) {
@@ -92,11 +103,10 @@ function change(direction) {
       bgIndex = 0
     }
   }
+
   changeBackground(bgIndex)
 }
 
 function changeBackground(bgIndex) {
   document.body.style.backgroundImage = `url(/img/${BACKGROUNDS[bgIndex]}.jpg)`
 }
-
-timerId()
