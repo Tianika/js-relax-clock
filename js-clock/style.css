@@ -2,12 +2,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: Roboto;
 }
 
 .body {
   width: 100vw;
   height: 100vh;
-  background-image: url(/img/de-jesus-benitez-kEgJVDkQkbU-unsplash.jpg);
+  background-image: url(./img/de-jesus-benitez-kEgJVDkQkbU-unsplash.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -26,7 +27,7 @@
 }
 
 .clock-face {
-  background-image: url(/png/clockface.png);
+  background-image: url(./png/clockface.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -36,7 +37,6 @@
   width: 50vh;
   height: 50vh;
   position: relative;
-  padding: 5px;
 }
 
 .hand {
@@ -44,36 +44,36 @@
   left: 50%;
   top: 10%;
   height: 40%;
-  width: 5px;
   transform-origin: 0 100%;
   transform: rotate(100deg);
-  transition: all 0.3s;
+  transition: all 0;
   opacity: 90%;
-}
-
-.hours,
-.minutes,
-.seconds,
-.center {
   background-color: #ffffff;
-}
-
-.seconds {
-  width: 3px;
 }
 
 .hours {
   width: 6px;
   height: 30%;
-  top: 19%;
-  transform-origin: 30% 100%;
-  transform: rotate(10deg);
+  top: 20%;
+}
+
+.minutes {
+  width: 5px;
+}
+
+.seconds {
+  width: 3px;
+  left: 50%;
 }
 
 .center {
-  position: absolute;
-  left: 50% - 7;
-  top: 50% - 7;
+  transform-origin: 50% 50%;
+  transform: rotate(0deg);
+  transition: all 0;
+  opacity: 98%;
+  background-color: #ffffff;
+  left: 50%;
+  top: 50%0;
   width: 20px;
   height: 20px;
   border-radius: 35%;
@@ -94,11 +94,11 @@
 }
 
 .arrow-left {
-  background-image: url(/png/arrow-left.png);
+  background-image: url(./png/arrow-left.png);
 }
 
 .arrow-right {
-  background-image: url(/png/arrow-right.png);
+  background-image: url(./png/arrow-right.png);
 }
 
 .arrow-left:hover,
@@ -135,6 +135,10 @@
 .quotes {
   font-size: 36px;
   opacity: 90%;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: #ffffff;
 }
 
 .quote {
@@ -144,7 +148,13 @@
   background: transparent;
   border: none;
   color: #ffffff;
-  font-size: 40px;
+  font-size: 50px;
+  opacity: 30%;
+}
+
+.quote:hover {
+  opacity: 80%;
+  font-size: 55px;
 }
 
 .control-audio {
@@ -167,27 +177,27 @@
 }
 
 .back {
-  background-image: url(/png/left.png);
+  background-image: url(./png/left.png);
 }
 
 .forward {
-  background-image: url(/png/right.png);
+  background-image: url(./png/right.png);
 }
 
 .play {
-  background-image: url(/png/play.png);
+  background-image: url(./png/play.png);
 }
 
 .pause {
-  background-image: url(/png/pause.png);
+  background-image: url(./png/pause.png);
 }
 
 .volumeUp {
-  background-image: url(/png/volume+.png);
+  background-image: url(./png/volume+.png);
 }
 
 .volumeDown {
-  background-image: url(/png/volume-.png);
+  background-image: url(./png/volume-.png);
 }
 
 .back:hover,
@@ -207,6 +217,9 @@
   .digital-date {
     font-size: 45px;
   }
+  .quotes {
+    font-size: 24px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -216,5 +229,9 @@
 
   .digital-date {
     font-size: 30px;
+  }
+
+  .quotes {
+    font-size: 18px;
   }
 }

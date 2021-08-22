@@ -87,6 +87,7 @@ const dateStr = document.querySelector('.digital-date')
 const hourHands = document.querySelector('.hours')
 const minutesHands = document.querySelector('.minutes')
 const secondHands = document.querySelector('.seconds')
+const center = document.querySelector('.center')
 const audio = document.querySelector('.audio')
 const leftSound = document.querySelector('.back')
 const rightSound = document.querySelector('.forward')
@@ -98,12 +99,12 @@ const quote = document.querySelector('.quotes')
 const previous = document.querySelector('.previous')
 const next = document.querySelector('.next')
 
-let bgIndex = Math.round(Math.random() * BACKGROUNDS.length)
-let soundIndex = Math.round(Math.random() * SOUNDS.length)
-let quoteIndex = Math.round(Math.random() * QUOTES.length)
+let bgIndex = Math.floor(Math.random() * BACKGROUNDS.length)
+let soundIndex = Math.floor(Math.random() * SOUNDS.length)
+let quoteIndex = Math.floor(Math.random() * QUOTES.length)
 
-document.body.style.backgroundImage = `url(/img/${BACKGROUNDS[bgIndex]}.jpg)`
-audio.src = `/mp3/${SOUNDS[soundIndex]}.mp3`
+document.body.style.backgroundImage = `url(./img/${BACKGROUNDS[bgIndex]}.jpg)`
+audio.src = `./mp3/${SOUNDS[soundIndex]}.mp3`
 quote.textContent = `${QUOTES[quoteIndex]}`
 setTime()
 
@@ -127,6 +128,11 @@ previous.addEventListener('click', () =>
   changeQuote('left', QUOTES, quoteIndex)
 )
 next.addEventListener('click', () => changeQuote('right', QUOTES, quoteIndex))
+quote.addEventListener(
+  'click',
+  () =>
+    (quote.textContent = `${QUOTES[Math.floor(Math.random() * QUOTES.length)]}`)
+)
 
 let timerId = setTimeout(function show() {
   setTime()
@@ -143,11 +149,12 @@ function analogClock() {
 
   let hourDeg = hours * 30 + minutes / 2
   let minutesDeg = minutes * 6
-  let secondsDeg = seconds * 6
+  let secondsDeg = (seconds / 60) * 360
 
   hourHands.style.transform = `rotate(${hourDeg}deg)`
   minutesHands.style.transform = `rotate(${minutesDeg}deg)`
   secondHands.style.transform = `rotate(${secondsDeg}deg)`
+  center.style.transform = `rotate(${secondsDeg}deg)`
 }
 
 function setTime() {
@@ -171,12 +178,12 @@ function showTime(time, date) {
 
 function changeBackground(direction, arr, index) {
   bgIndex = change(direction, arr, index)
-  document.body.style.backgroundImage = `url(/img/${BACKGROUNDS[bgIndex]}.jpg)`
+  document.body.style.backgroundImage = `url(./img/${BACKGROUNDS[bgIndex]}.jpg)`
 }
 
 function changeSound(direction, arr, index) {
   soundIndex = change(direction, arr, index)
-  audio.src = `/mp3/${SOUNDS[soundIndex]}.mp3`
+  audio.src = `./mp3/${SOUNDS[soundIndex]}.mp3`
 }
 
 function changeQuote(direction, arr, index) {
