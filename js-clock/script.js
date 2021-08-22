@@ -3,31 +3,38 @@ const BACKGROUNDS = [
   'de-jesus-benitez-kEgJVDkQkbU-unsplash',
   'irina-iriser-t1hVc9bqai0-unsplash',
   'frank-mckenna-4V8JxijgZ_c-unsplash',
+  'eberhard-grossgasteiger-J759OVAFLhI-unsplash',
   'irina-iriser-uPKgTRAflLY-unsplash',
   'nelson-santos-jr-PuaIPFH3FHg-unsplash',
   'mike-aunzo-yYSnv8meSMY-unsplash',
   'karl-jk-hedin-8Cj3qmU2QtI-unsplash',
   'dave-hoefler-D-FI-GHZeVc-unsplash',
+  'ricardo-prosperi-axF8pcPd0pc-unsplash',
   'luca-cavallin-PYlO9l71i3w-unsplash',
   'akk-U3wLZLmsVG8-unsplash',
   'eric-scherrer-Xuv4SC-ld4M-unsplash',
   'johannes-plenio-s0XDLfhyN34-unsplash',
   'anders-jilden-uwbajDCODj4-unsplash',
+  'matias-mateo-aWFXsSOxNLg-unsplash',
   'simon-marsault-5oow5G6BCGY-unsplash',
   'freestocks-EssPg6x5QeY-unsplash',
   'anton-darius-xYIuqpHD2oQ-unsplash',
 ]
 
 const SOUNDS = [
+  'gorenie-ognya-s-potreskivaniem-2-27551',
+  'groza-i-prolivnoy-dojd',
+  'krik-i-gogotanie-ptits-i-shum-voln',
   'les-ptitsyi-techet-reka-36679',
   'les-yujnaya-amerika-vecher-nasekomyie-blizko-38554',
   'more-slegka-volnuetsya',
+  'ogon-v-kamine-loop-27524',
+  'penie-ptits-v-parke-26166',
   'priroda-noch-sverchki-36291',
-  'priroda-noch-sverchki-techet-reka-37383',
-  'reka-malenkaya-31368',
+  'prolivnoy-dojd',
   'reka-techt-omyivaya-kamni-medlennoe-techenie-31243',
-  'spokoynoe-more-i-kriki-chaek',
-  'volnyi-pleschutsya-more-okean-pobereje-41080',
+  'shum-voln-bereg-morya-31279',
+  'volna-voln-katitsya-zvukovyie-effektyi-42809',
 ]
 
 const MONTHS = [
@@ -80,6 +87,7 @@ const dateStr = document.querySelector('.digital-date')
 const hourHands = document.querySelector('.hours')
 const minutesHands = document.querySelector('.minutes')
 const secondHands = document.querySelector('.seconds')
+const center = document.querySelector('.center')
 const audio = document.querySelector('.audio')
 const leftSound = document.querySelector('.back')
 const rightSound = document.querySelector('.forward')
@@ -91,12 +99,12 @@ const quote = document.querySelector('.quotes')
 const previous = document.querySelector('.previous')
 const next = document.querySelector('.next')
 
-let bgIndex = Math.round(Math.random() * BACKGROUNDS.length)
-let soundIndex = Math.round(Math.random() * SOUNDS.length)
-let quoteIndex = Math.round(Math.random() * QUOTES.length)
+let bgIndex = Math.floor(Math.random() * BACKGROUNDS.length)
+let soundIndex = Math.floor(Math.random() * SOUNDS.length)
+let quoteIndex = Math.floor(Math.random() * QUOTES.length)
 
-document.body.style.backgroundImage = `url(/img/${BACKGROUNDS[bgIndex]}.jpg)`
-audio.src = `/mp3/${SOUNDS[soundIndex]}.mp3`
+document.body.style.backgroundImage = `url(./img/${BACKGROUNDS[bgIndex]}.jpg)`
+audio.src = `./mp3/${SOUNDS[soundIndex]}.mp3`
 quote.textContent = `${QUOTES[quoteIndex]}`
 setTime()
 
@@ -120,6 +128,11 @@ previous.addEventListener('click', () =>
   changeQuote('left', QUOTES, quoteIndex)
 )
 next.addEventListener('click', () => changeQuote('right', QUOTES, quoteIndex))
+quote.addEventListener(
+  'click',
+  () =>
+    (quote.textContent = `${QUOTES[Math.floor(Math.random() * QUOTES.length)]}`)
+)
 
 let timerId = setTimeout(function show() {
   setTime()
@@ -136,11 +149,12 @@ function analogClock() {
 
   let hourDeg = hours * 30 + minutes / 2
   let minutesDeg = minutes * 6
-  let secondsDeg = seconds * 6
+  let secondsDeg = (seconds / 60) * 360
 
   hourHands.style.transform = `rotate(${hourDeg}deg)`
   minutesHands.style.transform = `rotate(${minutesDeg}deg)`
   secondHands.style.transform = `rotate(${secondsDeg}deg)`
+  center.style.transform = `rotate(${secondsDeg}deg)`
 }
 
 function setTime() {
@@ -164,12 +178,12 @@ function showTime(time, date) {
 
 function changeBackground(direction, arr, index) {
   bgIndex = change(direction, arr, index)
-  document.body.style.backgroundImage = `url(/img/${BACKGROUNDS[bgIndex]}.jpg)`
+  document.body.style.backgroundImage = `url(./img/${BACKGROUNDS[bgIndex]}.jpg)`
 }
 
 function changeSound(direction, arr, index) {
   soundIndex = change(direction, arr, index)
-  audio.src = `/mp3/${SOUNDS[soundIndex]}.mp3`
+  audio.src = `./mp3/${SOUNDS[soundIndex]}.mp3`
 }
 
 function changeQuote(direction, arr, index) {
