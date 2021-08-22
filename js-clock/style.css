@@ -42,32 +42,30 @@
 .hand {
   position: absolute;
   left: 50%;
-  top: 5%;
-  height: 45%;
+  top: 10%;
+  height: 40%;
   width: 5px;
   transform-origin: 0 100%;
   transform: rotate(100deg);
   transition: all 0.3s;
+  opacity: 90%;
 }
 
 .hours,
-.minutes {
-  background-color: #000000;
+.minutes,
+.seconds,
+.center {
+  background-color: #ffffff;
 }
 
 .seconds {
-  background-color: #ff0000;
   width: 3px;
-}
-
-.center {
-  background-color: #ff0000;
 }
 
 .hours {
   width: 6px;
   height: 30%;
-  top: 20%;
+  top: 19%;
   transform-origin: 30% 100%;
   transform: rotate(10deg);
 }
@@ -76,9 +74,9 @@
   position: absolute;
   left: 50% - 7;
   top: 50% - 7;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 35%;
 }
 
 .arrow-left,
