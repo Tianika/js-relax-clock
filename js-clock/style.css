@@ -224,14 +224,26 @@
 
 @media (max-width: 768px) {
   .digital-time {
-    font-size: 50px;
+    font-size: 45px;
   }
 
   .digital-date {
-    font-size: 30px;
+    font-size: 28px;
+    text-align: center;
   }
 
   .quotes {
-    font-size: 18px;
+    font-size: 20px;
+  }
+
+  .arrow-left,
+  .arrow-right {
+    width: 40px;
+    height: 60px;
+  }
+
+  .control-audio {
+    margin-top: 16px;
+    min-width: 70%;
   }
 }
