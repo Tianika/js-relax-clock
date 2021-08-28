@@ -10,19 +10,23 @@ function filterUpdate() {
 }
 
 function checkBgColor() {
-  const body = document.querySelector('.body')
-  const color = window.getComputedStyle(body).getPropertyValue('--background')
+  const root = document.querySelector(':root')
+  const color = getComputedStyle(root).getPropertyValue('--background')
   const currColor = Number(`0x${color.substring(1, 7)}`)
 
   if (currColor < 8421504) {
-    changeTextColor('#ffffff')
+    changeColor('--text', '#ffffff')
+    changeColor('--first-color', '#000000')
+    changeColor('--second-color', '#ffffff')
   } else {
-    changeTextColor('#000000')
+    changeColor('--text', '#000000')
+    changeColor('--first-color', '#ffffff')
+    changeColor('--second-color', '#000000')
   }
 }
 
-function changeTextColor(color) {
-  document.documentElement.style.setProperty(`--text`, color)
+function changeColor(vari, color) {
+  document.documentElement.style.setProperty(vari, color)
 }
 
 inputs.forEach((input) => input.addEventListener('change', filterUpdate))
