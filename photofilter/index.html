@@ -9,12 +9,128 @@
   </head>
   <body class="body">
     <h1 class="title">Photofilter</h1>
-    <div class="controls"></div>
-    <img
-      class="photo"
-      src="./assets/img/cristina-anne-costello-NDprz_Y90UM-unsplash.jpg"
-      alt="photo"
-    />
+    <div class="main">
+      <div class="controls">
+        <div class="input">
+          <label for="background">background</label>
+          <input type="color" name="background" value="#ffffff" />
+        </div>
+        <div class="input">
+          <label for="border">border</label>
+          <input
+            type="range"
+            name="border"
+            min="0"
+            max="20"
+            value="1"
+            data-sizing="px"
+          />
+        </div>
+        <div class="input">
+          <label for="blur">blur</label>
+          <input
+            type="range"
+            name="blur"
+            min="0"
+            max="10"
+            value="0"
+            step="0.1"
+            data-sizing="px"
+          />
+        </div>
+        <div class="input">
+          <label for="brightness">brightness</label>
+          <input
+            type="range"
+            name="brightness"
+            min="0.2"
+            max="2"
+            value="1"
+            step="0.01"
+          />
+        </div>
+        <div class="input">
+          <label for="contrast">contrast</label>
+          <input
+            type="range"
+            name="contrast"
+            min="0.2"
+            max="2"
+            value="1"
+            step="0.01"
+          />
+        </div>
+        <div class="input">
+          <label for="grayscale">gray-scale</label>
+          <input
+            type="range"
+            name="grayscale"
+            min="0"
+            max="1"
+            value="0"
+            step="0.01"
+          />
+        </div>
+        <div class="input">
+          <label for="hue-rotate">hue-rotate</label>
+          <input
+            type="range"
+            name="hue-rotate"
+            min="0"
+            max="359"
+            value="0"
+            step="1"
+            data-sizing="deg"
+          />
+        </div>
+        <div class="input">
+          <label for="invert">invert</label>
+          <input
+            type="range"
+            name="invert"
+            min="0"
+            max="1"
+            value="0"
+            step="0.01"
+          />
+        </div>
+        <div class="input">
+          <label for="saturate">saturate</label>
+          <input
+            type="range"
+            name="saturate"
+            min="0"
+            max="4"
+            value="1"
+            step="0.1"
+          />
+        </div>
+        <div class="input">
+          <label for="sepia">sepia</label>
+          <input
+            type="range"
+            name="sepia"
+            min="0"
+            max="1"
+            value="0"
+            step="0.01"
+          />
+        </div>
+      </div>
+      <div class="photo">
+        <img
+          class="photo-main"
+          src="./assets/img/cristina-anne-costello-NDprz_Y90UM-unsplash.jpg"
+          alt="photo"
+        />
+      </div>
+    </div>
+    <div class="menu">
+      <button class="load">Load</button>
+      <button class="save">Save</button>
+      <button class="next">Next</button>
+      <button class="reset">Reset</button>
+    </div>
 
     <script src="index.js"></script>
   </body>

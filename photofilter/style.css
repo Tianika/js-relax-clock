@@ -4,6 +4,19 @@
   box-sizing: border-box;
 }
 
+:root {
+  --background: #ffffff;
+  --text: #000000;
+  --blur: 0px;
+  --brightness: 1;
+  --contrast: 1;
+  --grayscale: 0;
+  --hue-rotate: 0deg;
+  --invert: 0;
+  --saturate: 1;
+  --sepia: 0;
+}
+
 .body {
   width: 100vw;
   height: 100vh;
@@ -11,12 +24,42 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  background-color: #8a8a8a;
-  font-size: 50px;
-  color: #ffffff;
+  background: var(--background);
+  font-size: 25px;
+  color: var(--text);
 }
 
-.photo {
-  max-width: 95vw;
-  max-height: 70vh;
+.title {
+  text-transform: uppercase;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+}
+
+.controls {
+  padding: 10px;
+}
+
+.controls input {
+  margin: 10px;
+}
+
+.input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.photo-main {
+  max-width: 50vw;
+  max-height: 50vh;
+  margin-left: 15px;
+  background-color: var(--background);
+  filter: blur(var(--blur)) brightness(var(--brightness))
+    contrast(var(--contrast)) grayscale(var(--grayscale)) invert(var(--invert))
+    saturate(var(--saturate)) hue-rotate(var(--hue-rotate)) sepia(var(--sepia));
 }
