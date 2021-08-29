@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Photofilter</title>
+  </head>
+  <body class="body">
+    <h1 class="title">Photofilter</h1>
+    <div class="main">
+      <div class="controls">
+        <div class="input">
+          <label for="background">background</label>
+          <input type="color" name="background" value="#ffffff" />
+        </div>
+        <div class="input">
+          <label for="border-color">border-color</label>
+          <input type="color" name="border-color" value="#8a8a8a" />
+        </div>
+        <div class="input">
+          <label for="border">border</label>
+          <input
+            type="range"
+            name="border"
+            min="0"
+            max="40"
+            value="1"
+            data-sizing="px"
+          />
+        </div>
+        <div class="input">
+          <label for="blur">blur</label>
+          <input
+            type="range"
+            name="blur"
+            min="0"
+            max="10"
+            value="0"
+            step="0.1"
+            data-sizing="px"
+          />
+        </div>
+        <div class="input">
+          <label for="brightness">brightness</label>
+          <input
+            type="range"
+            name="brightness"
+            min="0.2"
+            max="2"
+            value="1"
+            step="0.01"
+          />
+        </div>
+        <div class="input">
+          <label for="contrast">contrast</label>
+          <input
+            type="range"
+            name="contrast"
+            min="0.2"
+            max="2"
+            value="1"
+            step="0.01"
+          />
+        </div>
+        <div class="input">
+          <label for="grayscale">gray-scale</label>
+          <input
+            type="range"
+            name="grayscale"
+            min="0"
+            max="1"
+            value="0"
+            step="0.01"
+          />
+        </div>
+        <div class="input">
+          <label for="hue-rotate">hue-rotate</label>
+          <input
+            type="range"
+            name="hue-rotate"
+            min="0"
+            max="359"
+            value="0"
+            step="1"
+            data-sizing="deg"
+          />
+        </div>
+        <div class="input">
+          <label for="invert">invert</label>
+          <input
+            type="range"
+            name="invert"
+            min="0"
+            max="1"
+            value="0"
+            step="0.01"
+          />
+        </div>
+        <div class="input">
+          <label for="saturate">saturate</label>
+          <input
+            type="range"
+            name="saturate"
+            min="0"
+            max="4"
+            value="1"
+            step="0.1"
+          />
+        </div>
+        <div class="input">
+          <label for="sepia">sepia</label>
+          <input
+            type="range"
+            name="sepia"
+            min="0"
+            max="1"
+            value="0"
+            step="0.01"
+          />
+        </div>
+      </div>
+      <div class="photo">
+        <img
+          src="./assets/img/cristina-anne-costello-NDprz_Y90UM-unsplash.jpg"
+          alt="photo"
+          class="photo-main"
+        />
+      </div>
+
+      <div class="presets">
+        <h3>Presets</h3>
+        <div class="presets-images">
+          <img
+            class="presets-img preset0"
+            src="./assets/img/cristina-anne-costello-NDprz_Y90UM-unsplash.jpg"
+            alt="presets"
+            data-name="preset0"
+          />
+          <img
+            class="presets-img preset1"
+            src="./assets/img/cristina-anne-costello-NDprz_Y90UM-unsplash.jpg"
+            alt="presets"
+            data-name="preset1"
+          />
+          <img
+            class="presets-img preset2"
+            src="./assets/img/cristina-anne-costello-NDprz_Y90UM-unsplash.jpg"
+            alt="presets"
+            data-name="preset2"
+          />
+          <img
+            class="presets-img preset3"
+            src="./assets/img/cristina-anne-costello-NDprz_Y90UM-unsplash.jpg"
+            alt="presets"
+            data-name="preset3"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="gallery">
+      <h3>Gallery</h3>
+      <div class="gallery-images">
+        <img
+          class="gallery-img img0"
+          src="./assets/img/cristina-anne-costello-NDprz_Y90UM-unsplash.jpg"
+          alt="gallery images"
+        />
+        <img
+          class="gallery-img img1"
+          src="./assets/img/bruno-martins-GkZvxVsHYWw-unsplash.jpg"
+          alt="gallery images"
+        />
+        <img
+          class="gallery-img img2"
+          src="./assets/img/guus-baggermans-oWsy_TQAScI-unsplash.jpg"
+          alt="gallery images"
+        />
+        <img
+          class="gallery-img img3"
+          src="./assets/img/obed-hernandez-FP-w4qSBRnA-unsplash.jpg"
+          alt="gallery images"
+        />
+        <img
+          class="gallery-img img4"
+          src="./assets/img/tony-panici-PdNoXi1Q9AI-unsplash.jpg"
+          alt="gallery images"
+        />
+        <img
+          class="gallery-img img5"
+          src="./assets/img/creative-captures-X05ycx5WXZg-unsplash.jpg"
+          alt="gallery images"
+        />
+        <img
+          class="gallery-img img6"
+          src="./assets/img/colin-watts-Ay2H-lv3Qyc-unsplash.jpg"
+          alt="gallery images"
+        />
+      </div>
+    </div>
+    <div class="menu">
+      <button class="menu-button load">Load</button>
+      <button class="menu-button save">Save</button>
+      <button class="menu-button reset">Reset</button>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
