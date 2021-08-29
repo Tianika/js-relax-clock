@@ -22,12 +22,16 @@
           <input type="color" name="background" value="#ffffff" />
         </div>
         <div class="input">
+          <label for="border-color">border-color</label>
+          <input type="color" name="border-color" value="#8a8a8a" />
+        </div>
+        <div class="input">
           <label for="border">border</label>
           <input
             type="range"
             name="border"
             min="0"
-            max="20"
+            max="40"
             value="1"
             data-sizing="px"
           />
@@ -125,17 +129,67 @@
       </div>
       <div class="photo">
         <img
-          class="photo-main"
           src="./assets/img/cristina-anne-costello-NDprz_Y90UM-unsplash.jpg"
           alt="photo"
+          class="photo-main"
+        />
+      </div>
+
+      <div class="presets">
+        <h3>Presets</h3>
+        <div class="presets-images">
+          <button class="presets-img preset0"></button>
+          <button class="presets-img preset1"></button>
+          <button class="presets-img preset2"></button>
+          <button class="presets-img preset3"></button>
+        </div>
+      </div>
+    </div>
+    <div class="gallery">
+      <h3>Gallery</h3>
+      <div class="gallery-images">
+        <img
+          class="gallery-img img0"
+          src="./assets/img/cristina-anne-costello-NDprz_Y90UM-unsplash.jpg"
+          alt="gallery images"
+        />
+        <img
+          class="gallery-img img1"
+          src="./assets/img/bruno-martins-GkZvxVsHYWw-unsplash.jpg"
+          alt="gallery images"
+        />
+        <img
+          class="gallery-img img2"
+          src="./assets/img/guus-baggermans-oWsy_TQAScI-unsplash.jpg"
+          alt="gallery images"
+        />
+        <img
+          class="gallery-img img3"
+          src="./assets/img/obed-hernandez-FP-w4qSBRnA-unsplash.jpg"
+          alt="gallery images"
+        />
+        <img
+          class="gallery-img img4"
+          src="./assets/img/tony-panici-PdNoXi1Q9AI-unsplash.jpg"
+          alt="gallery images"
+        />
+        <img
+          class="gallery-img img5"
+          src="./assets/img/creative-captures-X05ycx5WXZg-unsplash.jpg"
+          alt="gallery images"
+        />
+        <img
+          class="gallery-img img6"
+          src="./assets/img/colin-watts-Ay2H-lv3Qyc-unsplash.jpg"
+          alt="gallery images"
         />
       </div>
     </div>
     <div class="menu">
-      <button class="load">Load</button>
-      <button class="save">Save</button>
-      <button class="next">Next</button>
-      <button class="reset">Reset</button>
+      <button class="menu-button load">Load</button>
+      <button class="menu-button save">Save</button>
+      <button class="menu-button next">Next</button>
+      <button class="menu-button reset">Reset</button>
     </div>
 
     <script src="index.js"></script>

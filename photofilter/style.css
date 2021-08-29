@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 :root {
@@ -9,6 +12,8 @@
   --text: #000000;
   --first-color: #ffffff;
   --second-color: #000000;
+  --border-color: #8a8a8a;
+  --border: 0px;
   --blur: 0px;
   --brightness: 1;
   --contrast: 1;
@@ -17,6 +22,11 @@
   --invert: 0;
   --saturate: 1;
   --sepia: 0;
+}
+
+h3 {
+  text-align: center;
+  margin: 10px;
 }
 
 .body {
@@ -32,27 +42,21 @@
   color: var(--text);
 }
 
-button {
-  cursor: pointer;
-  width: 140px;
-  height: 40px;
-  font-size: 20px;
-  background: var(--second-color);
-  color: var(--first-color);
-  border-radius: 5px;
-}
-
 .title {
   text-transform: uppercase;
+  margin-top: 15px;
 }
 
 .main {
   display: flex;
   justify-content: space-between;
   margin: 20px auto;
+  max-height: 60%;
+  max-width: 80%;
 }
 
 .controls {
+  max-width: 20%;
   padding: 10px;
 }
 
@@ -67,12 +71,103 @@ button {
   padding: 5px;
 }
 
+.photo {
+  width: 60%;
+  height: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .photo-main {
-  max-width: 50vw;
-  max-height: 50vh;
-  margin-left: 15px;
-  background-color: var(--background);
+  max-width: 100% - var(--border);
+  max-height: 100%;
+  background-color: var(--border-color);
+  border: var(--border) solid var(--border-color);
   filter: blur(var(--blur)) brightness(var(--brightness))
     contrast(var(--contrast)) grayscale(var(--grayscale)) invert(var(--invert))
     saturate(var(--saturate)) hue-rotate(var(--hue-rotate)) sepia(var(--sepia));
+}
+
+.gallery {
+  max-height: 20%;
+}
+
+.gallery-images {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.gallery-img {
+  margin: 15px;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.img0 {
+  background-image: url(./assets/img/cristina-anne-costello-NDprz_Y90UM-unsplash.jpg);
+}
+
+.img1 {
+  background-image: url(./assets/img/bruno-martins-GkZvxVsHYWw-unsplash.jpg);
+}
+
+.img2 {
+  background-image: url(./assets/img/belinda-fewings-KExPVpww8Ug-unsplash.jpg);
+}
+
+.img3 {
+  background-image: url(./assets/img/guus-baggermans-oWsy_TQAScI-unsplash.jpg);
+}
+
+.img4 {
+  background-image: url(./assets/img/sander-dechering-VFMROm2F_QM-unsplash.jpg);
+}
+
+.img5 {
+  background-image: url(./assets/img/tony-panici-PdNoXi1Q9AI-unsplash.jpg);
+}
+
+.img6 {
+  background-image: url(./assets/img/obed-hernandez-FP-w4qSBRnA-unsplash.jpg);
+}
+
+.presets {
+  max-width: 20%;
+  max-height: 80%;
+  padding: 10px;
+}
+
+.presets-images {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.presets-img {
+  margin: 10px;
+  width: 150px;
+  height: 150px;
+  background-position: center;
+  background-size: cover;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+  height: 5%;
+  margin-bottom: 15px;
+}
+
+.menu-button {
+  cursor: pointer;
+  width: 140px;
+  height: 40px;
+  font-size: 20px;
+  background: var(--second-color);
+  color: var(--first-color);
+  border-radius: 5px;
 }
