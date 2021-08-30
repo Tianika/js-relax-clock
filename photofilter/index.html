@@ -17,11 +17,11 @@
     <h1 class="title">Photofilter</h1>
     <div class="main">
       <div class="controls">
-        <div class="input">
+        <div class="input background">
           <label for="background">background</label>
           <input type="color" name="background" value="#ffffff" />
         </div>
-        <div class="input">
+        <div class="input border-color">
           <label for="border-color">border-color</label>
           <input type="color" name="border-color" value="#8a8a8a" />
         </div>
@@ -36,7 +36,7 @@
             data-sizing="px"
           />
         </div>
-        <div class="input">
+        <div class="input blur">
           <label for="blur">blur</label>
           <input
             type="range"
@@ -48,7 +48,7 @@
             data-sizing="px"
           />
         </div>
-        <div class="input">
+        <div class="input brightness">
           <label for="brightness">brightness</label>
           <input
             type="range"
@@ -59,7 +59,7 @@
             step="0.01"
           />
         </div>
-        <div class="input">
+        <div class="input contrast">
           <label for="contrast">contrast</label>
           <input
             type="range"
@@ -70,7 +70,7 @@
             step="0.01"
           />
         </div>
-        <div class="input">
+        <div class="input grayscale">
           <label for="grayscale">gray-scale</label>
           <input
             type="range"
@@ -81,7 +81,7 @@
             step="0.01"
           />
         </div>
-        <div class="input">
+        <div class="input hue-rotate">
           <label for="hue-rotate">hue-rotate</label>
           <input
             type="range"
@@ -93,7 +93,7 @@
             data-sizing="deg"
           />
         </div>
-        <div class="input">
+        <div class="input invert">
           <label for="invert">invert</label>
           <input
             type="range"
@@ -104,7 +104,7 @@
             step="0.01"
           />
         </div>
-        <div class="input">
+        <div class="input saturate">
           <label for="saturate">saturate</label>
           <input
             type="range"
@@ -115,7 +115,7 @@
             step="0.1"
           />
         </div>
-        <div class="input">
+        <div class="input sepia">
           <label for="sepia">sepia</label>
           <input
             type="range"
@@ -208,7 +208,7 @@
     <div class="menu">
       <button class="menu-button load">Load</button>
       <button class="menu-button save">Save</button>
-      <button class="menu-button reset">Reset</button>
+      <button class="menu-button reset" data-name="DEFAULTVALUES">Reset</button>
     </div>
 
     <script src="index.js"></script>
